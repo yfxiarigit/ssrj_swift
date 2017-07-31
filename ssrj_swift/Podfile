@@ -1,0 +1,10 @@
+platform :ios, '8.0'
+use_frameworks!
+
+target 'ssrj_swift' do
+pod 'Alamofire', '~> 4.4.0'
+pod 'SnapKit', '~> 3.2.0'
+pod ‘MJRefresh’
+pod 'Kingfisher', '~> 3.5.1'
+pod 'SVProgressHUD'
+end

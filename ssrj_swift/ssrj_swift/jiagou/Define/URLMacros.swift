@@ -7,3 +7,5 @@
 //
 
 import Foundation
+
+let APP_BASE_API = "https://ssrj.com"

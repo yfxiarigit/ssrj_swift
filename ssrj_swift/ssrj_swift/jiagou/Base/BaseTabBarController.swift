@@ -12,24 +12,29 @@ class BaseTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        self.addChildViewController(title: "首页", viewController: HomeViewController(), image: "icon1", selectImage: "icon1_select")
+        self.addChildViewController(title: "购物", viewController: ShopViewController(), image: "icon2", selectImage: "icon2_select")
+        self.addChildViewController(title: "场景穿搭", viewController: SceneViewController(), image: "icon6", selectImage: "icon6_select")
+        self.addChildViewController(title: "我的日记", viewController: MineViewController(), image: "icon5", selectImage: "icon5_select")
+        
+        let item = UITabBarItem.appearance()
+        item.setTitleTextAttributes([NSForegroundColorAttributeName: AppTabBarTextColor], for: .normal)
+        item.setTitleTextAttributes([NSForegroundColorAttributeName: AppTabBarTextSelectColor], for: .selected)
+        
+        self.setupTabBar()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func setupTabBar() {
+        
+        self.setValue(CustomTabBar(), forKey: "tabBar");
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func addChildViewController(title:String, viewController:UIViewController, image:String, selectImage:String) {
+        
+        viewController.title = title
+        viewController.tabBarItem.image = UIImage(named: image)?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+        viewController.tabBarItem.selectedImage = UIImage(named: selectImage)?.withRenderingMode(.alwaysOriginal)
+        let nav = BaseNavigationController(rootViewController: viewController)
+        self.addChildViewController(nav)
     }
-    */
 
 }

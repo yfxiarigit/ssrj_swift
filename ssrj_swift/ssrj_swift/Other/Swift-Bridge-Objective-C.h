@@ -10,4 +10,7 @@
 #define Swift_Bridge_Objective_C_h
 
 
+#import "MJRefresh.h"
+#import "SVProgressHUD.h"
+
 #endif /* Swift_Bridge_Objective_C_h */

@@ -6,4 +6,8 @@
 //  Copyright © 2017年 yfxiari. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+let kSreenWidth = UIScreen.main.bounds.size.width
+let KSreenHeight = UIScreen.main.bounds.size.height
+
